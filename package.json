@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "export": "next export",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev-static": "http-server ./build -p 80",
+    "deploy": "next build && next export -o build"
   },
   "dependencies": {
     "@next/font": "13.1.6",
