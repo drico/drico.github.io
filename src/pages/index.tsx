@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Audric Debladis</title>
-        <meta name='description' content='CV' />
+        <title>Audric Debladis curriculum vitae</title>
+        <meta name='description' content='Audric Debladis curriculum vitae' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/myFace.jpg' />
       </Head>
       <main>
         <div className='flex'>
