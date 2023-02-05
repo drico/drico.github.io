@@ -1,4 +1,10 @@
-:root {
+/* To select which google fonts you want, go to https://fonts.google.com, select every font and variants required bu the app, and select the @import way */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Google icons font https://fonts.google.com/icons?icon.query=game&icon.style=Outlined */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,7 +110,7 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
 
 
 
@@ -112,3 +118,48 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+@layer base {
+  /* a,
+  button,
+  input,
+  select,
+  div {
+    @apply outline-none;
+  } */
+  /* h1 {
+    @apply text-center font-headers text-[40px];
+  } */
+  /* h2 {
+    @apply font-headers text-xl font-bold md:text-xxl;
+  } */
+  body {
+    @apply text-text;
+  }
+
+  html,
+  body {
+    @apply bg-black;
+  }
+}
+
+/* 
+html {
+  font-family: Roboto, system-ui, sans-serif;
+} */
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+img, video {
+  height: fit-content;
+}
