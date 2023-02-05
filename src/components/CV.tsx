@@ -8,7 +8,7 @@ const { differenceInYears } = require('date-fns');
 
 const MainSection = ({ title, icon }: { title: string; icon: string }) => {
   return (
-    <div className='w-full mb-5 flex font-headers text-center font-bold text-base justify-center items-center'>
+    <div className='w-full mb-5 flex font-headers text-center font-bold text-xl justify-center items-center'>
       <div className='rounded-full bg-dark p-1 w-8 h-8 mr-2 text-white '>
         <Icon name={icon} size='big' className='pt-0.5' />
       </div>
@@ -32,14 +32,14 @@ const Section = ({
 }) => {
   return (
     <div className='mb-8'>
-      <div className='mb-1 font-headers font-bold text-base flex'>
-        <div className='text-light mr-4'>
-          <Icon name={icon} className='mr-1' />
-          {company}
-          <Icon name='calendar_month' className='mr-1 ml-4' />
-          {date}
+      <div className='mb-1 font-headers font-bold text-base flex items-center'>
+        <div className='text-light mr-4 flex'>
+          <Icon name={icon} className='mr-1' size='medium' />
+          <div>{company}</div>
+          <Icon name='calendar_month' className='mr-1 ml-4' size='medium' />
+          <div>{date}</div>
         </div>
-        {title}
+        <div>{title}</div>
       </div>
       {children && <div>{children}</div>}
     </div>
@@ -50,6 +50,50 @@ const CV = () => {
   return (
     <div className='text-base p-5'>
       <MainSection icon='work' title='EXPÉRIENCE' />
+
+      <Section
+        company='Total Energies'
+        date='2019-2023'
+        title='DEV FULL STACK'
+        icon='apartment'
+      >
+        Développement de 7 applications B2B sur divers sujets liés aux
+        lubrifiants industriels :
+        <ul className='list-disc  pl-4'>
+          <li>
+            monitoring de performances de lubrifiants industriels pour des
+            usines, des véhiclues, ou encore des navires
+          </li>
+          <li>analyse statistique de la santé de parcs machines</li>
+          <li>
+            analyse et simulation d'impacts climatiques pour la conception
+            d'huiles
+          </li>
+        </ul>
+        <br />
+        Formation de développeurs juniors
+        <br />
+        <br />
+        Mise en place de divers librairies afin de factoriser/uniformiser
+        l'ensemble des projets, et de faciliter le travail des équipes et
+        améliorer leur productivité
+        <br />
+        <br />
+        Stack utilisée: React, NextJS, GraphQL (et Apollo), PostgreSQL,
+        ElasticSearch, Material-UI, TailwindCSS, Express, TypeScript
+      </Section>
+
+      <Section
+        company='Dior'
+        date='été 2018'
+        title='DEV BACKEND'
+        icon='apartment'
+      >
+        Mission courte afin de développer "Willy" : un outil interne basé sur
+        Cloudinary, permettant le traitement d'images catalogue
+        (redimensionnement et mise sur fond transparent).
+      </Section>
+
       <Section
         company='Feeligo'
         date='2014-2018'
@@ -68,14 +112,13 @@ const CV = () => {
           <li>
             Conception et réalisation de plusieurs app iOS utilisant ce
             framework :
-            <ul className='list-disc pl-4'>
+            <ul className='list-[circle] pl-4'>
               <li>
                 Une app de tchat interne permettant l’envoi de texte et
                 stickers.
               </li>
               <li>
-                Un clavier spécialisé dans l’envoi de stickers. « StickerPicker
-                »
+                Un clavier spécialisé dans l’envoi de stickers. "StickerPicker"
               </li>
               <li>
                 Une app dédiée au partage de stickers via FacebookMessenger.
@@ -92,6 +135,7 @@ const CV = () => {
             APIs.
           </li>
         </ul>
+        <br />
         <p className='mt-2'>
           En tant que <strong>Data Scientist</strong> :
         </p>
@@ -110,6 +154,7 @@ const CV = () => {
             outils tels que Amazon Web Services (AWS) et autres...
           </li>
         </ul>
+        <br />
         <p className='mt-2'>
           En tant que Dev <strong>Back End</strong> :
         </p>
@@ -146,7 +191,7 @@ const CV = () => {
         </ul>
       </Section>
 
-      <MainSection icon='school' title='ÉDUCATION' />
+      <MainSection icon='school' title='SCOLARITÉ' />
 
       <Section
         company='École d’art Boulle'
@@ -163,7 +208,7 @@ const CV = () => {
         icon='menu_book'
       >
         Parcours suivis :<br />
-        <ul className='list-disc'>
+        <ul className='list-disc  pl-4'>
           <li>Intelligence, Complexité et Cognition</li>
           <li>Théorie et Paradigmes de l’Informatique</li>
           <li>Apprentissage, Fouille de données et Applications</li>

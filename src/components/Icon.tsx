@@ -1,6 +1,10 @@
-type IconFontSize = 'normal' | 'big';
+type IconFontSize = 'normal' | 'medium' | 'big';
 
-const fontSizeMap: Record<IconFontSize, number> = { normal: 14, big: 20 };
+const fontSizeMap: Record<IconFontSize, number> = {
+  normal: 14,
+  medium: 22,
+  big: 20,
+};
 
 const Icon = ({
   name,

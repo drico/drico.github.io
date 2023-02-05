@@ -1,11 +1,29 @@
 import Image from 'next/image';
 import Icon from './Icon';
-import { map } from 'lodash';
+import { map, times, join } from 'lodash';
 import { ReactNode } from 'react';
 
 const { differenceInYears } = require('date-fns');
 
 const IMAGE_SIZE = 100;
+
+const StarList = ({ star, list }: { star: number; list: string[] }) => {
+  const startString =
+    join(
+      times(star, () => '★'),
+      ''
+    ) +
+    join(
+      times(5 - star, () => '☆'),
+      ''
+    );
+  return (
+    <div className=' mb-2'>
+      <div>{startString} :</div>
+      <div> {join(list, ' • ')}</div>
+    </div>
+  );
+};
 
 const Section = ({
   title,
@@ -26,7 +44,7 @@ const Section = ({
 
 const LeftBanner = () => {
   return (
-    <div className='w-[300px] min-h-screen bg-dark text-white text-xs'>
+    <div className='w-[400px] min-h-screen bg-dark text-white text-sm'>
       <div className='bg-darkest w-full flex flex-col items-center gap-2 font-headers p-5'>
         <div className='rounded-full bg-dark p-1 w-fit'>
           <Image
@@ -55,16 +73,16 @@ const LeftBanner = () => {
                 icon: 'call',
                 label: '(+33)06-77-73-34-65',
                 href: 'tel:+330677733465',
-              },{
+              },
+              {
                 icon: 'handshake',
                 label: 'Profil Malt',
                 href: 'https://www.malt.fr/profile/audricdebladis',
               },
-         
             ],
             ({ icon, label, href }) => (
               <div className='flex items-center'>
-                <Icon name={icon}  className="m-1"/>
+                <Icon name={icon} className='m-1' />
                 <a href={href}>{label}</a>
               </div>
             )
@@ -72,14 +90,46 @@ const LeftBanner = () => {
         </Section>
 
         <Section title='COMPÉTENCES'>
-          <div>★★★★★ : iOS, Objective-C</div>
-          <div>
-            ★★★★☆ : NodeJS, Ruby, CoffeeScript, Rails, Heroku, Github, SQL,
-            PostgreSQL, chatbot Facebook, AWS : Redshift, CloudFront, Lambda,
-            S3, SQS, SNS, Kinesis
-          </div>
-          <div>★★★☆☆ : Python, Facebook</div>
-          <div>★★☆☆ ☆: Java, HTML, CSS</div>
+          <StarList
+            star={5}
+            list={[
+              'NodeJS',
+              'Express',
+              'Lodash',
+              'TypeScript',
+              'PostgreSQL',
+              'SQL',
+            ]}
+          />
+
+          <StarList
+            star={4}
+            list={[
+              'React',
+              'NextJS',
+              'Graphql',
+              'ElasticSearch',
+              'Material-UI',
+              'TailwindCSS',
+              'Github',
+              'iOS',
+              'Objective-C',
+              'AWS : Redshift',
+              'CloudFront',
+              'Lambda',
+              'S3',
+              'SQS',
+              'SNS',
+              'Kinesis',
+            ]}
+          />
+
+          <StarList
+            star={3}
+            list={['Heroku', 'Chatbot Facebook ', 'Python', 'Facebook']}
+          />
+
+          <StarList star={2} list={['Ruby', 'Rails', 'Java']} />
         </Section>
 
         <Section title='LANGUES'>
@@ -131,7 +181,7 @@ const LeftBanner = () => {
               ],
               ({ icon, label }) => (
                 <div className='flex items-center'>
-                  <Icon name={icon} className="m-1" />
+                  <Icon name={icon} className='m-1' />
                   <div>{label}</div>
                 </div>
               )
