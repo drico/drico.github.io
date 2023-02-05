@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "dev-static": "http-server ./build -p 80",
-    "deploy": "next build && next export -o build"
+    "dev-static": "http-server ./html -p 80",
+    "deploy": "next build && next export -o html"
   },
   "dependencies": {
     "@next/font": "13.1.6",
