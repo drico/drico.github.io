@@ -57,7 +57,8 @@ const LeftBanner = () => {
           />
         </div>
         <div className='m-2 font-bold text-base'>AUDRIC DEBLADIS</div>
-        <div className='-m-2'>Ingénieur Développeur Sénior</div>
+        <div className='-m-2 font-bold'>Ingénieur Développeur Sénior</div>
+        <div className='font-bold'>Full Stack</div>
         <div>{differenceInYears(new Date(), Date.parse('07/26/1987'))} ans</div>
       </div>
       <div className='p-5'>
