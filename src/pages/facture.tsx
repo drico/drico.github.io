@@ -227,7 +227,9 @@ const Facture = () => {
           fullWidth={fullWidth}
         >
           {times(12, (i) => (
-            <MenuItem value={i}>{getMonthName(i)}</MenuItem>
+            <MenuItem value={i} key={i}>
+              {getMonthName(i)}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -270,7 +272,7 @@ const Facture = () => {
         <div className="flex">
           <div className="flex flex-col gap-5 grow">
             {map(cache.workLines, ({ month, days }, i) => (
-              <div className="flex gap-5">
+              <div className="flex gap-5" key={i}>
                 {monthSelect({
                   label: "Month",
                   value: cache.workLines[i].month,
@@ -373,14 +375,14 @@ const Facture = () => {
                 },
               ],
               ({ title, name, lines }) => (
-                <div className="w-2/5">
+                <div className="w-2/5" key={title}>
                   <div className="text-xxs border-b border-gray-300 text-gray-500 leading-5 mb-1">
                     {title}
                   </div>
                   <div>
                     <div className="font-bold">{name}</div>
-                    {map(lines, (line) => (
-                      <div>{line}</div>
+                    {map(lines, (line, i) => (
+                      <div key={i}>{line}</div>
                     ))}
                   </div>
                 </div>
@@ -439,8 +441,8 @@ const Facture = () => {
                   { label: "TVA (20%)", value: totalHT * 0.2 },
                   { label: "TOTAL TTC", value: totalHT * 1.2 },
                 ],
-                ({ label, value }) => (
-                  <TableRow className="h-8">
+                ({ label, value }, i) => (
+                  <TableRow className="h-8" key={label}>
                     <TableCell className="border-b-0" />
                     <TableCell className="border-b-0" />
                     <TableCell align="right" className="text-xxs">
@@ -458,8 +460,8 @@ const Facture = () => {
           <div className="grow" />
 
           <div className="text-[9px] text-center">
-            {map(cache.footerLines, (line) =>
-              line ? <div>{line}</div> : <br />
+            {map(cache.footerLines, (line, i) =>
+              line ? <div key={i}>{line}</div> : <br key={i} />
             )}
           </div>
         </div>
