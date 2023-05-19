@@ -49,24 +49,53 @@ type Cache = {
 setDefaultOptions({ locale: fr });
 
 const defaultCache: Cache = {
-  clientLines: [],
-  clientName: "",
-  companyLines: [],
-  companyName: "",
-  factureOffset: 0,
-  footerLines: [],
-  prestation: "",
-  tjm: 0,
-  workLines: [],
-  year: 0,
-  month: 0,
+  year: 2023,
+  companyLines: [
+    "Audric Debladis",
+    "119 rue de Montreuil",
+    "chez Mr Audric Debladis",
+    "75011 Paris France",
+    "Numéro SIRET : 90436439500015",
+    "TVA intracom : FR93904364395",
+  ],
+  companyName: "DricoLogic",
+  clientName: "FreelanceRepublik (ODHCOM)",
+  clientLines: [
+    "99 Avenue Achille Peretti",
+    "92200 Neuilly-sur-Seine",
+    "Contact : Manon FOURCAT",
+    "Numéro d'immatriculation : 800 965 634 R.C.S. Nanterre",
+    "TVA intracom : FR13800965634",
+  ],
+  month: 2,
+  factureOffset: 2,
+  footerLines: [
+    "DricoLogic, SAS au capital de 1000€",
+    "SIRET 90436439500015 RCS de Paris - NAF 6202A",
+    "Numéro de TVA Intracommunautaire : FR93904364395",
+    "",
+    "",
+    "La facture est payable sous 60 jours. Tout règlement effectué après expiration du délai donnera lieu, à titre de pénalité de retard, à la facturation d'un intérêt de",
+    "retard égal à trois fois le taux d'intérêt légal en vigueur en France, à compter de la date d'exigibilité de cette présente facture jusqu'à la date de paiement effectif,",
+    "ainsi qu'à une indemnité forfaitaire pour frais de recouvrement d'un montant de 40 €. Les pénalités de retard sont exigibles sans qu'un rappel soit nécessaire",
+  ],
+  workLines: [
+    { month: 2, days: 1 },
+    { month: 3, days: 19 },
+  ],
+  tjm: 456,
+  prestation: "Développeur Senior Full Stack JS",
 };
 
 const Facture = () => {
   const [cache, setCache] = useState<Cache>(defaultCache);
 
   useEffect(() => {
-    setCache(JSON.parse(localStorage.getItem("facture") || "{}"));
+    setCache(
+      JSON.parse(
+        localStorage.getItem("facture") || JSON.stringify(defaultCache)
+      )
+    );
   }, []);
 
   const updateCache = (key: keyof Cache, value: any) => {
