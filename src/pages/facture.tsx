@@ -442,9 +442,9 @@ const Facture = () => {
             <div className="text-basetext-gray-500">{cache.prestation}</div>
           </div>
 
-          <Table>
+          <Table style={{ tableLayout: "fixed" }}>
             <TableHead>
-              <TableRow className="h-8">
+              <TableRow className="h-8 ">
                 <TableCell align="left" className="text-xxs border-b-0">
                   Mois
                 </TableCell>
@@ -457,7 +457,10 @@ const Facture = () => {
                 >
                   Prix unitaire (HT)
                 </TableCell>
-                <TableCell align="right" className="text-xxs border-b-0">
+                <TableCell
+                  align="right"
+                  className="text-xxs border-b-0 w-[110px]"
+                >
                   TOTAL (HT)
                 </TableCell>
               </TableRow>
