@@ -281,13 +281,29 @@ const Facture = () => {
     });
   };
 
+  const goToPreviousMonth = () => {
+    setCache((oldCache) => {
+      const newCache = cloneDeep(oldCache);
+      newCache.month = (newCache.month - 1 + 12) % 12;
+      if (newCache.month === 11) {
+        newCache.year = newCache.year - 1;
+      }
+      newCache.workLines = map(newCache.workLines, (workLine) => ({
+        month: (workLine.month - 1 + 12) % 12,
+        days: workLine.days,
+      }));
+      localStorage.setItem("facture", JSON.stringify(newCache));
+      return newCache;
+    });
+  };
+
   const totalHT = sumBy(cache.workLines, "days") * cache.tjm;
 
   return (
     <div>
       <div className="bg-white flex flex-col gap-5 p-5">
         <div className="flex justify-evenly">
-          <Button size="large" onClick={goToNextMonth}>
+          <Button size="large" onClick={goToPreviousMonth}>
             Mois précédent
           </Button>
           <Button size="large" onClick={() => printDiv("pdf")}>
