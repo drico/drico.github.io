@@ -32,7 +32,7 @@ const Heure = () => {
         </Typography>
 
         <Typography variant="body2" className="text-center">
-          {(diff > 0 ? "Tu pourras partir dans " : "Tu pourras partir dans ") +
+          {(diff > 0 ? "Tu pourras partir dans " : "Tu devrais être partie depuis ") +
             diffString}
         </Typography>
       </div>
