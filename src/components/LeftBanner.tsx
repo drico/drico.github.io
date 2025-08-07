@@ -95,6 +95,10 @@ const LeftBanner = () => {
             star={5}
             list={[
               "NodeJS",
+              "React",
+              "NextJS",
+              "Material-UI",
+              "Graphql",
               "Express",
               "Lodash",
               "TypeScript",
@@ -105,20 +109,19 @@ const LeftBanner = () => {
 
           <StarList
             star={4}
+            list={["ElasticSearch", "TailwindCSS", "Github", "iOS"]}
+          />
+
+          <StarList
+            star={3}
             list={[
-              "React",
-              "NextJS",
-              "Graphql",
-              "ElasticSearch",
-              "Material-UI",
-              "TailwindCSS",
-              "Github",
-              "iOS",
               "Objective-C",
               "AWS : Redshift",
-              "CloudFront",
               "Lambda",
               "S3",
+              "Heroku",
+              "Python",
+              "Facebook",
               "SQS",
               "SNS",
               "Kinesis",
@@ -126,11 +129,9 @@ const LeftBanner = () => {
           />
 
           <StarList
-            star={3}
-            list={["Heroku", "Chatbot Facebook ", "Python", "Facebook"]}
+            star={2}
+            list={["Ruby", "Chatbot Facebook", "Rails", "Java"]}
           />
-
-          <StarList star={2} list={["Ruby", "Rails", "Java"]} />
         </Section>
 
         <Section title="LANGUES">
@@ -152,8 +153,8 @@ const LeftBanner = () => {
                 description: "★★☆☆☆ notions",
               },
             ],
-            ({ icon, label, description }) => (
-              <div className="flex items-center gap-3 m-2">
+            ({ icon, label, description }, i) => (
+              <div className="flex items-center gap-3 m-2" key={i}>
                 <Image
                   className="rounded-full"
                   src={icon}
@@ -180,8 +181,8 @@ const LeftBanner = () => {
                 { icon: "cooking", label: "Cuisine" },
                 { icon: "stadia_controller", label: "Jeux vidéos" },
               ],
-              ({ icon, label }) => (
-                <div className="flex items-center">
+              ({ icon, label }, i) => (
+                <div className="flex items-center" key={i}>
                   <Icon name={icon} className="m-1" />
                   <div>{label}</div>
                 </div>

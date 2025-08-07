@@ -1,16 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
-import Image from 'next/image';
-import Icon from './Icon';
-import { map } from 'lodash';
-import { ReactNode } from 'react';
+import Image from "next/image";
+import Icon from "./Icon";
+import { map } from "lodash";
+import { ReactNode } from "react";
 
-const { differenceInYears } = require('date-fns');
+const { differenceInYears } = require("date-fns");
 
 const MainSection = ({ title, icon }: { title: string; icon: string }) => {
   return (
-    <div className='w-full mb-5 flex font-headers text-center font-bold text-xl justify-center items-center'>
-      <div className='rounded-full bg-dark p-1 w-8 h-8 mr-2 text-white '>
-        <Icon name={icon} size='big' className='pt-0.5' />
+    <div className="w-full mb-5 flex font-headers text-center font-bold text-xl justify-center items-center">
+      <div className="rounded-full bg-dark p-1 w-8 h-8 mr-2 text-white ">
+        <Icon name={icon} size="big" className="pt-0.5" />
       </div>
       {title}
     </div>
@@ -31,12 +31,12 @@ const Section = ({
   children?: ReactNode;
 }) => {
   return (
-    <div className='mb-8'>
-      <div className='mb-1 font-headers font-bold text-base flex items-center'>
-        <div className='text-light mr-4 flex'>
-          <Icon name={icon} className='mr-1' size='medium' />
+    <div className="mb-8">
+      <div className="mb-1 font-headers font-bold text-base flex items-center">
+        <div className="text-light mr-4 flex">
+          <Icon name={icon} className="mr-1" size="medium" />
           <div>{company}</div>
-          <Icon name='calendar_month' className='mr-1 ml-4' size='medium' />
+          <Icon name="calendar_month" className="mr-1 ml-4" size="medium" />
           <div>{date}</div>
         </div>
         <div>{title}</div>
@@ -48,18 +48,105 @@ const Section = ({
 
 const CV = () => {
   return (
-    <div className='text-base p-5'>
-      <MainSection icon='work' title='EXPÉRIENCE' />
+    <div className="text-base p-5">
+      <MainSection icon="work" title="EXPÉRIENCE" />
 
       <Section
-        company='Total Energies'
-        date='2019-2023'
-        title='DEV FULL STACK'
-        icon='apartment'
+        company="Dior Couture"
+        date="2023 à aujourd'hui"
+        title="SENIOR DEV WEB FULL STACK"
+        icon="apartment"
+      >
+        Participation à l'évolution du site e-commerce de{" "}
+        <a
+          className="underline"
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.dior.com/fr_fr/fashion"
+        >
+          Dior Couture
+        </a>
+        : plateforme internationale de luxe à plusieurs millions d'utilisateurs
+        actifs. <br />
+        <br />
+        Interventions transverses au sein de toutes les équipes produit :
+        <ul className="list-disc pl-4">
+          <li>
+            Mon Compte : gestion des utilisateurs (création de compte,
+            connexion, commandes).
+          </li>
+          <li>
+            Paiement : gestion du panier, des formulaires et de nombreux{" "}
+            <strong>providers de paiement</strong>.
+          </li>
+          <li>
+            Catalogue : affichage des produits et gestion du contenu dynamique.
+          </li>
+        </ul>
+        Dans chacunes des équipes produit :
+        <ul className="list-disc pl-4">
+          <li>
+            compréhension et appropriation de la complexité métier front & back
+          </li>
+          <li>implémentation de maquettes pixel perfect</li>
+          <li>ajout de nouvelles fonctionnalitées front & back</li>
+          <li>résolution de bugs</li>
+        </ul>
+        <br />
+        En plus du rôle standard de dev, j'ai pu procurer certains apports
+        techniques majeurs :
+        <ul className="list-disc pl-4">
+          <li>
+            Conception d'une <strong>CLI interne</strong> pour interagir avec
+            divers services back (base d'utilisateurs, commandes, etc...), ainsi
+            qu'exécuter divers <strong>scripts de migration</strong> ou de{" "}
+            <strong>reporting</strong>.
+          </li>
+          <li>
+            Création et déploiement d'un{" "}
+            <strong>design system basé sur Material UI</strong> (sans lequel la
+            refonte du site n'aurais pas été possible), avec :
+            <ul className="list-[circle] pl-4">
+              <li>
+                standardisation des composants UI et amélioration des
+                performances front
+              </li>
+              <li>
+                réduction significative de la base de code et des coûts de
+                maintenance
+              </li>
+              <li>
+                formation des équipes à l'utilisation et à la contribution au
+                design system
+              </li>
+            </ul>
+          </li>
+          <li>
+            Création d'un moteur de{" "}
+            <strong>formulaires basés sur React Hook Form</strong> et
+            intégration dans les divers écrans
+          </li>
+          <li>
+            Implémentation et lancement de scripts critiques sur la base
+            d'utilisateurs
+          </li>
+          <li>Migration de la base d'utilisateurs depuis Akamai vers Reach5</li>
+          <li>Formation des testeurs aux bases de l'automatisation avec Playwright</li>
+        </ul>
+        <br />
+        Stack utilisée: React, NextJS, GraphQL (et Apollo Federation),
+        Material-UI, Reach Hook Form, Express, TypeScript, Akamai, Reach5
+      </Section>
+
+      <Section
+        company="Total Energies"
+        date="2019-2023"
+        title="DEV WEB FULL STACK"
+        icon="apartment"
       >
         Développement de 7 applications B2B sur divers sujets liés aux
         lubrifiants industriels :
-        <ul className='list-disc  pl-4'>
+        <ul className="list-disc  pl-4">
           <li>
             monitoring de performances de lubrifiants industriels pour des
             usines, des véhiclues, ou encore des navires
@@ -84,10 +171,10 @@ const CV = () => {
       </Section>
 
       <Section
-        company='Dior'
-        date='été 2018'
-        title='DEV BACKEND'
-        icon='apartment'
+        company="Dior"
+        date="été 2018"
+        title="DEV BACKEND"
+        icon="apartment"
       >
         Mission courte afin de développer "Willy" : un outil interne basé sur
         Cloudinary, permettant le traitement d'images catalogue
@@ -95,15 +182,15 @@ const CV = () => {
       </Section>
 
       <Section
-        company='Feeligo'
-        date='2014-2018'
-        title='LEAD-DEV IOS, DATA-SCIENTIST, DEV BACKEND'
-        icon='apartment'
+        company="Feeligo"
+        date="2014-2018"
+        title="LEAD-DEV IOS, DATA-SCIENTIST, DEV BACKEND"
+        icon="apartment"
       >
-        <p className='mt-2'>
+        <p className="mt-2">
           En tant que <strong>Lead Dev</strong> iOS :
         </p>
-        <ul className='list-disc  pl-4'>
+        <ul className="list-disc  pl-4">
           <li>
             Conception et réalisation d'un framework destiné à des clients
             professionnels, permettant à leurs applications d'envoyer aisément
@@ -112,13 +199,13 @@ const CV = () => {
           <li>
             Conception et réalisation de plusieurs app iOS utilisant ce
             framework :
-            <ul className='list-[circle] pl-4'>
+            <ul className="list-[circle] pl-4">
               <li>
-                Une app de tchat interne permettant l’envoi de texte et
+                Une app de tchat interne permettant l'envoi de texte et
                 stickers.
               </li>
               <li>
-                Un clavier spécialisé dans l’envoi de stickers. "StickerPicker"
+                Un clavier spécialisé dans l'envoi de stickers. "StickerPicker"
               </li>
               <li>
                 Une app dédiée au partage de stickers via FacebookMessenger.
@@ -128,7 +215,7 @@ const CV = () => {
 
           <li>
             Intégration de multiples frameworks permettant notamment : le
-            tracking d’utilisateurs ; le tracking de bugs
+            tracking d'utilisateurs ; le tracking de bugs
           </li>
           <li>
             Intégration nos de solutions internes de tracking et nos diverses
@@ -136,10 +223,10 @@ const CV = () => {
           </li>
         </ul>
         <br />
-        <p className='mt-2'>
+        <p className="mt-2">
           En tant que <strong>Data Scientist</strong> :
         </p>
-        <ul className='list-disc pl-4'>
+        <ul className="list-disc pl-4">
           <li>
             Création et automatisation de rapports internes de performance en
             Ruby puis Python
@@ -148,18 +235,18 @@ const CV = () => {
             Analyse du comportement des utilisateurs (clustering) en Python
           </li>
           <li>Conseils pour l'amélioration des performances</li>
-          <li>Conception et réalisation d’un ETL (Ruby, NodeJS, AWS)</li>
+          <li>Conception et réalisation d'un ETL (Ruby, NodeJS, AWS)</li>
           <li>
             Stockage et analyse de données, machine learning, etc... avec des
             outils tels que Amazon Web Services (AWS) et autres...
           </li>
         </ul>
         <br />
-        <p className='mt-2'>
+        <p className="mt-2">
           En tant que Dev <strong>Back End</strong> :
         </p>
-        <ul className='list-disc pl-4'>
-          <li>Développement et maintenance d’applications Ruby et NodeJS</li>
+        <ul className="list-disc pl-4">
+          <li>Développement et maintenance d'applications Ruby et NodeJS</li>
           <li>
             Conception et réalisation d'un framework de création de chatbot
             Facebook, et utilisation de ce framework pour le développement de
@@ -168,67 +255,67 @@ const CV = () => {
         </ul>
       </Section>
       <Section
-        company='MyBlee'
-        date='2011-2014'
-        title='LEAD-DEV IOS'
-        icon='apartment'
+        company="MyBlee"
+        date="2011-2014"
+        title="LEAD-DEV IOS"
+        icon="apartment"
       >
         Conception et réalisation d'une app iOS de grande taille en startup :
-        <ul className='list-disc pl-4'>
-          <li>Développeur principal de l’application</li>
-          <li>Gestion d’une équipe d’une 20ène de développeurs</li>
+        <ul className="list-disc pl-4">
+          <li>Développeur principal de l'application</li>
+          <li>Gestion d'une équipe d'une 20ène de développeurs</li>
           <li>
-            Formation de stagiaires à l’Objective-C ainsi qu’au moteur de l’app
+            Formation de stagiaires à l'Objective-C ainsi qu'au moteur de l'app
           </li>
           <li>Revue de code</li>
           <li>
             Implémentation de nombreux frameworks : user tracking, bug tracking,
-            synthèse vocale, reconnaissance d’écriture manuscrite etc...
-            Conception de l’API, intégration dans l’app iOS, mise en place de
+            synthèse vocale, reconnaissance d'écriture manuscrite etc...
+            Conception de l'API, intégration dans l'app iOS, mise en place de
             WebSocket pour une fonctionnalité de tchat.
           </li>
-          <li>Mise en place d’intégration continue (Jenkins)</li>
+          <li>Mise en place d'intégration continue (Jenkins)</li>
         </ul>
       </Section>
 
-      <MainSection icon='school' title='SCOLARITÉ' />
+      <MainSection icon="school" title="SCOLARITÉ" />
 
       <Section
-        company='École d’art Boulle'
-        date='2018-2019'
+        company="École d'art Boulle"
+        date="2018-2019"
         title="CAP D'ÉBÉNISTERIE"
-        icon='menu_book'
+        icon="menu_book"
       >
         {"Année de césure afin de me former à l'ébénisterie"}
       </Section>
       <Section
-        company='Télécom Paris-Tech'
-        date='2009-2011'
-        title='INGÉNIEUR TÉLÉCOM PARIS-TECH'
-        icon='menu_book'
+        company="Télécom Paris-Tech"
+        date="2009-2011"
+        title="INGÉNIEUR TÉLÉCOM PARIS-TECH"
+        icon="menu_book"
       >
         Parcours suivis :<br />
-        <ul className='list-disc  pl-4'>
+        <ul className="list-disc  pl-4">
           <li>Intelligence, Complexité et Cognition</li>
-          <li>Théorie et Paradigmes de l’Informatique</li>
+          <li>Théorie et Paradigmes de l'Informatique</li>
           <li>Apprentissage, Fouille de données et Applications</li>
         </ul>
       </Section>
       <Section
-        company='Université Paris 12'
-        date='2005-2009'
-        title='MAÎTRISE DE MATHÉMATIQUES APPLIQUÉES'
-        icon='menu_book'
+        company="Université Paris 12"
+        date="2005-2009"
+        title="MAÎTRISE DE MATHÉMATIQUES APPLIQUÉES"
+        icon="menu_book"
       >
         Mention Très Bien, major de promotion
         <br />
         Thèmes favoris: Probabilités, Processus stochastiques, Algèbre
       </Section>
       <Section
-        company='Université Paris 12'
-        date='2005-2008'
-        title='LICENCE D’INFORMATIQUE'
-        icon='menu_book'
+        company="Université Paris 12"
+        date="2005-2008"
+        title="LICENCE D'INFORMATIQUE"
+        icon="menu_book"
       >
         Mention Très Bien, major de promotion
         <br />
