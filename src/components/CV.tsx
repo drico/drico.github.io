@@ -69,7 +69,7 @@ const CV = () => {
         : plateforme internationale de luxe à plusieurs millions d'utilisateurs
         actifs. <br />
         <br />
-        Interventions transverses au sein de toutes les équipes produit :
+        Interventions transverses au sein de toutes les équipes "produit" :
         <ul className="list-disc pl-4">
           <li>
             Mon Compte : gestion des utilisateurs (création de compte,
@@ -83,7 +83,7 @@ const CV = () => {
             Catalogue : affichage des produits et gestion du contenu dynamique.
           </li>
         </ul>
-        Dans chacunes des équipes produit :
+        Dans chacunes des équipes "produit" :
         <ul className="list-disc pl-4">
           <li>
             compréhension et appropriation de la complexité métier front & back
@@ -99,13 +99,13 @@ const CV = () => {
           <li>
             Conception d'une <strong>CLI interne</strong> pour interagir avec
             divers services back (base d'utilisateurs, commandes, etc...), ainsi
-            qu'exécuter divers <strong>scripts de migration</strong> ou de{" "}
+            qu'exécution de divers <strong>scripts de migration</strong> ou de{" "}
             <strong>reporting</strong>.
           </li>
           <li>
             Création et déploiement d'un{" "}
             <strong>design system basé sur Material UI</strong> (sans lequel la
-            refonte du site n'aurais pas été possible), avec :
+            refonte du site n'aurait pas été possible), avec :
             <ul className="list-[circle] pl-4">
               <li>
                 standardisation des composants UI et amélioration des
