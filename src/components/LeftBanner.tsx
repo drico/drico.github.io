@@ -94,6 +94,9 @@ const LeftBanner = () => {
           <StarList
             star={5}
             list={[
+              "Mathématiques",
+              "Algorithmique",
+              "Logique",
               "NodeJS",
               "React",
               "NextJS",
