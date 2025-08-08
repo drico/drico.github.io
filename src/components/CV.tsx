@@ -135,7 +135,7 @@ const CV = () => {
         </ul>
         <br />
         Stack utilisée: React, NextJS, GraphQL (et Apollo Federation),
-        Material-UI, Reach Hook Form, Express, TypeScript, Akamai, Reach5
+        Material-UI, React Hook Form, Express, TypeScript, Akamai, Reach5
       </Section>
 
       <Section
