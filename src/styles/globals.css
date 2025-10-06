@@ -115,14 +115,14 @@ a {
 
 
 /* Tailwind css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
 
 
 
 
-@layer base {
+/* @layer base { */
   /* a,
   button,
   input,
@@ -136,15 +136,15 @@ a {
   /* h2 {
     @apply font-headers text-xl font-bold md:text-xxl;
   } */
-  body {
+  /* body {
     @apply text-text;
-  }
+  } */
 
-  html,
+  /* html,
   body {
     @apply bg-black;
-  }
-}
+  } */
+/* } */
 
 /* 
 html {
