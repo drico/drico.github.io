@@ -10,11 +10,12 @@
     "dev-static": "next build && next export -o build http-server ./build -p 80"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.14.0",
     "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.1",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/material": "^7.3.4",
+    "@mui/x-charts": "^8.15.0",
     "@next/font": "13.1.6",
     "@types/node": "18.11.19",
     "@types/react": "18.0.27",

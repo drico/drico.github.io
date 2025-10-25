@@ -40,7 +40,7 @@ export default function Home() {
         />
         <Box sx={{ display: "flex", zIndex: 1, opacity: 0.8 }}>
           <Grid container spacing={3} sx={{ m: 10 }}>
-            <Grid item xs={3}>
+            <Grid size={{ xs: 3 }}>
               <Button
                 fullWidth
                 color="primary"

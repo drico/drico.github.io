@@ -74,6 +74,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   // You can consider sharing the same Emotion cache between all the SSR requests to speed up performance.
   // However, be aware that it can have global side effects.
   const cache = createEmotionCache();
+  // @ts-ignore TODO : find whats the problem
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
