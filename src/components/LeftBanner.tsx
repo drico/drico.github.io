@@ -2,6 +2,7 @@ import Image from "next/image";
 import Icon from "./Icon";
 import { map, times, join } from "lodash";
 import { ReactNode } from "react";
+import { Link } from "@mui/material";
 
 const { differenceInYears } = require("date-fns");
 
@@ -84,7 +85,7 @@ const LeftBanner = () => {
             ({ icon, label, href }) => (
               <div className="flex items-center" key={href}>
                 <Icon name={icon} className="m-1" />
-                <a href={href}>{label}</a>
+                <Link href={href}>{label}</Link>
               </div>
             )
           )}

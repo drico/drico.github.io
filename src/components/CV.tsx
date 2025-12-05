@@ -3,6 +3,7 @@ import Image from "next/image";
 import Icon from "./Icon";
 import { map } from "lodash";
 import { ReactNode } from "react";
+import { Link, Typography } from "@mui/material";
 
 const { differenceInYears } = require("date-fns");
 
@@ -58,14 +59,15 @@ const CV = () => {
         icon="apartment"
       >
         Participation à l'évolution du site e-commerce de{" "}
-        <a
+        <Link
+          color="secondary"
           className="underline"
           target="_blank"
           rel="noreferrer"
           href="https://www.dior.com/fr_fr/fashion"
         >
           Dior Couture
-        </a>
+        </Link>
         : plateforme internationale de luxe à plusieurs millions d'utilisateurs
         actifs. <br />
         <br />
@@ -131,7 +133,9 @@ const CV = () => {
             d'utilisateurs
           </li>
           <li>Migration de la base d'utilisateurs depuis Akamai vers Reach5</li>
-          <li>Formation des testeurs aux bases de l'automatisation avec Playwright</li>
+          <li>
+            Formation des testeurs aux bases de l'automatisation avec Playwright
+          </li>
         </ul>
         <br />
         Stack utilisée: React, NextJS, GraphQL (et Apollo Federation),
