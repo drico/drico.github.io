@@ -85,7 +85,9 @@ const LeftBanner = () => {
             ({ icon, label, href }) => (
               <div className="flex items-center" key={href}>
                 <Icon name={icon} className="m-1" />
-                <Link href={href}>{label}</Link>
+                <Link color="secondary" href={href}>
+                  {label}
+                </Link>
               </div>
             )
           )}

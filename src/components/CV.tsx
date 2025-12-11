@@ -60,7 +60,6 @@ const CV = () => {
       >
         Participation à l'évolution du site e-commerce de{" "}
         <Link
-          color="secondary"
           className="underline"
           target="_blank"
           rel="noreferrer"

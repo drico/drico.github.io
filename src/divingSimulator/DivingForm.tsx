@@ -58,11 +58,11 @@ export const DivingForm = ({ diving, onChange }: DivingFormProps) => {
           ))}
         </Grid>
         <Grid size={2} sx={{ alignSelf: "flex-end" }}>
-          <IconButton color="secondary" onClick={onAddStep}>
+          <IconButton onClick={onAddStep}>
             <Add />
           </IconButton>
           {diving.steps.length > 1 && (
-            <IconButton color="secondary" onClick={onRemoveStep}>
+            <IconButton onClick={onRemoveStep}>
               <Remove />
             </IconButton>
           )}

@@ -44,11 +44,11 @@ export const DivingsForm = ({ divings, onChange }: DivingsFormProps) => {
         ))}
       </Grid>
       Plongées :
-      <IconButton color="secondary" onClick={onAddDiving}>
+      <IconButton onClick={onAddDiving}>
         <Add />
       </IconButton>
       {divings.length > 1 && (
-        <IconButton color="secondary" onClick={onRemoveDiving}>
+        <IconButton onClick={onRemoveDiving}>
           <Remove />
         </IconButton>
       )}
